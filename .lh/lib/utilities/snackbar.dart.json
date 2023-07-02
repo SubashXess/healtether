@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/utilities/snackbar.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1688059972249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1688059972249,
+            "name": "Commit-0",
+            "content": "\r\nimport 'package:flutter/material.dart';\r\n\r\nshowSnackBar(\r\n  BuildContext context, {\r\n  required String message,\r\n  Color? bgColor = Colors.grey,\r\n  Color? actionLabelColor = Colors.blue,\r\n  String? label,\r\n  Function()? onPressed,\r\n}) {\r\n  return ScaffoldMessenger.of(context)\r\n    ..removeCurrentSnackBar()\r\n    ..showSnackBar(\r\n      SnackBar(\r\n        content:\r\n            Text(message, style: AppTextStyle.h4TextStyle(color: Colors.white)),\r\n        action: label != null\r\n            ? SnackBarAction(\r\n                label: label,\r\n                textColor: actionLabelColor,\r\n                onPressed: onPressed!,\r\n              )\r\n            : null,\r\n      ),\r\n    );\r\n}"
+        }
+    ]
+}

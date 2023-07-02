@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/database/shared_preference.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1688155075571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688155115140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n class UserPreferences {\r\n   static final UserPreferences _instance = UserPreferences._internal();\r\n-  late SharedPreferences _prefs;\r\n-\r\n-  factory UserPreferences() {\r\n-    return _instance;\r\n-  }\r\n-\r\n+  factory UserPreferences() => _instance;\r\n   UserPreferences._internal();\r\n }\r\n"
+                },
+                {
+                    "date": 1688155218061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,15 @@\n class UserPreferences {\r\n   static final UserPreferences _instance = UserPreferences._internal();\r\n   factory UserPreferences() => _instance;\r\n   UserPreferences._internal();\r\n+\r\n+   setStringValue(String key, String value) async {\r\n+    SharedPreferences prefs = await SharedPreferences.getInstance();\r\n+    prefs.setString(key, value);\r\n+  }\r\n+\r\n+  Future<String> getStringValue(String key) async {\r\n+    SharedPreferences prefs = await SharedPreferences.getInstance();\r\n+    return prefs.getString(key) ?? \"\";\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1688155264706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n+import 'package:shared_preferences/shared_preferences.dart';\r\n+\r\n class UserPreferences {\r\n   static final UserPreferences _instance = UserPreferences._internal();\r\n   factory UserPreferences() => _instance;\r\n   UserPreferences._internal();\r\n \r\n-   setStringValue(String key, String value) async {\r\n+  setStringValue(String key, String value) async {\r\n     SharedPreferences prefs = await SharedPreferences.getInstance();\r\n     prefs.setString(key, value);\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1688155326798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,15 @@\n class UserPreferences {\r\n   static final UserPreferences _instance = UserPreferences._internal();\r\n   factory UserPreferences() => _instance;\r\n   UserPreferences._internal();\r\n+  late SharedPreferences _prefs;\r\n \r\n   setStringValue(String key, String value) async {\r\n-    SharedPreferences prefs = await SharedPreferences.getInstance();\r\n-    prefs.setString(key, value);\r\n+    _prefs = await SharedPreferences.getInstance();\r\n+    _prefs.setString(key, value);\r\n   }\r\n \r\n   Future<String> getStringValue(String key) async {\r\n-    SharedPreferences prefs = await SharedPreferences.getInstance();\r\n-    return prefs.getString(key) ?? \"\";\r\n+    return _prefs.getString(key) ?? \"\";\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688155354762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,12 @@\n   factory UserPreferences() => _instance;\r\n   UserPreferences._internal();\r\n   late SharedPreferences _prefs;\r\n \r\n+  Future<void> init() async {\r\n+    _prefs = await SharedPreferences.getInstance();\r\n+  }\r\n+\r\n   setStringValue(String key, String value) async {\r\n     _prefs = await SharedPreferences.getInstance();\r\n     _prefs.setString(key, value);\r\n   }\r\n"
+                },
+                {
+                    "date": 1688155672929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,14 @@\n \r\n   Future<String> getStringValue(String key) async {\r\n     return _prefs.getString(key) ?? \"\";\r\n   }\r\n+\r\n+  setBoolValue(String key, bool value) async {\r\n+    _prefs = await SharedPreferences.getInstance();\r\n+    _prefs.setBool(key, value);\r\n+  }\r\n+\r\n+  Future<bool> getBoolValue(String key) async {\r\n+    return _prefs.getBool(key) ?? false;\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1688156088270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,21 +10,26 @@\n     _prefs = await SharedPreferences.getInstance();\r\n   }\r\n \r\n   setStringValue(String key, String value) async {\r\n-    _prefs = await SharedPreferences.getInstance();\r\n+    \r\n     _prefs.setString(key, value);\r\n   }\r\n \r\n   Future<String> getStringValue(String key) async {\r\n     return _prefs.getString(key) ?? \"\";\r\n   }\r\n \r\n   setBoolValue(String key, bool value) async {\r\n-    _prefs = await SharedPreferences.getInstance();\r\n+   \r\n     _prefs.setBool(key, value);\r\n   }\r\n \r\n   Future<bool> getBoolValue(String key) async {\r\n     return _prefs.getBool(key) ?? false;\r\n   }\r\n+\r\n+ Future close() async {\r\n+    \r\n+    _prefs.clear();\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1688156097987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,26 +10,23 @@\n     _prefs = await SharedPreferences.getInstance();\r\n   }\r\n \r\n   setStringValue(String key, String value) async {\r\n-    \r\n     _prefs.setString(key, value);\r\n   }\r\n \r\n   Future<String> getStringValue(String key) async {\r\n     return _prefs.getString(key) ?? \"\";\r\n   }\r\n \r\n   setBoolValue(String key, bool value) async {\r\n-   \r\n     _prefs.setBool(key, value);\r\n   }\r\n \r\n   Future<bool> getBoolValue(String key) async {\r\n     return _prefs.getBool(key) ?? false;\r\n   }\r\n \r\n- Future close() async {\r\n-    \r\n+  Future close() async {\r\n     _prefs.clear();\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1688155075571,
+            "name": "Commit-0",
+            "content": "class UserPreferences {\r\n  static final UserPreferences _instance = UserPreferences._internal();\r\n  late SharedPreferences _prefs;\r\n\r\n  factory UserPreferences() {\r\n    return _instance;\r\n  }\r\n\r\n  UserPreferences._internal();\r\n}\r\n"
+        }
+    ]
+}

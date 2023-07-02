@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/widgets/formfield_widget.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1688043341693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688043523681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,11 @@\n       validator: validator,\r\n       decoration: InputDecoration(\r\n         contentPadding: EdgeInsets.zero,\r\n         isDense: true,\r\n-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),\r\n+        border: OutlineInputBorder(\r\n+            borderRadius: BorderRadius.circular(16.0),\r\n+            borderSide: BorderSide(color: Colors.black45)),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688043556927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,12 @@\n         contentPadding: EdgeInsets.zero,\r\n         isDense: true,\r\n         border: OutlineInputBorder(\r\n             borderRadius: BorderRadius.circular(16.0),\r\n-            borderSide: BorderSide(color: Colors.black26)),\r\n+            borderSide: const BorderSide(color: Colors.black26)),\r\n+            enabledBorder: OutlineInputBorder(\r\n+            borderRadius: BorderRadius.circular(16.0),\r\n+            borderSide: const BorderSide(color: Colors.black26)),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688043583030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,12 @@\n             borderSide: const BorderSide(color: Colors.black26)),\r\n         enabledBorder: OutlineInputBorder(\r\n             borderRadius: BorderRadius.circular(16.0),\r\n             borderSide: const BorderSide(color: Colors.black26)),\r\n+            focusedBorder: OutlineInputBorder(\r\n+            borderRadius: BorderRadius.circular(16.0),\r\n+            borderSide: const BorderSide(color: Colors.black26)),\r\n+            \r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1688043341693,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nimport '../constants/themes.dart';\r\n\r\nclass FormFieldWidget extends StatelessWidget {\r\n  const FormFieldWidget({\r\n    super.key,\r\n    required this.controller,\r\n    required this.node,\r\n    this.autofillHints,\r\n    this.keyboardType = TextInputType.text,\r\n    this.maxLength,\r\n    this.maxLines,\r\n    this.minLines,\r\n    this.onChanged,\r\n    this.textCaps = TextCapitalization.none,\r\n    this.validator,\r\n  });\r\n\r\n  final TextEditingController controller;\r\n  final FocusNode node;\r\n  final Iterable<String>? autofillHints;\r\n  final TextInputType keyboardType;\r\n  final int? maxLength;\r\n  final int? maxLines;\r\n  final int? minLines;\r\n  final Function(String)? onChanged;\r\n  final TextCapitalization textCaps;\r\n  final String? Function(String?)? validator;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return TextFormField(\r\n      controller: controller,\r\n      focusNode: node,\r\n      autofillHints: autofillHints,\r\n      keyboardType: keyboardType,\r\n      maxLength: maxLength,\r\n      maxLines: maxLines,\r\n      minLines: minLines,\r\n      onChanged: onChanged,\r\n      textCapitalization: textCaps,\r\n      style: AppTextStyle.h4TextStyle(),\r\n      validator: validator,\r\n      decoration: InputDecoration(\r\n        contentPadding: EdgeInsets.zero,\r\n        isDense: true,\r\n        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

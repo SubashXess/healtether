@@ -1,0 +1,38 @@
+{
+    "sourceFile": "lib/pages/schedulepage/components/schedule_widget.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1688145212858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688145255827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n   });\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    Size size = MediaQuery.of(context).size;\r\n     return Container();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688145301612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:healtether/constants/themes.dart';\r\n \r\n class UpcomingScheduleWidget extends StatelessWidget {\r\n   const UpcomingScheduleWidget({\r\n     super.key,\r\n@@ -7,7 +8,18 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Size size = MediaQuery.of(context).size;\r\n-    return Container();\r\n+    return Container(\r\n+      width: size.width,\r\n+      decoration: BoxDecoration(\r\n+        borderRadius: BorderRadius.circular(16.0),\r\n+        color: Colors.deepPurple.shade100,\r\n+        boxShadow: [\r\n+          AppBoxShadow.s0BoxShadow(\r\n+            color: Colors.black.withOpacity(0.056),\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688145589437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,16 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     Size size = MediaQuery.of(context).size;\r\n     return Container(\r\n+      width: double.infinity,\r\n+      child: ListView.builder(\r\n+        itemCount: 5,\r\n+        shrinkWrap: true,\r\n+        padding: EdgeInsets.zero,\r\n+        \r\n+        itemBuilder: (context, index) {\r\n+        return Container(\r\n       width: size.width,\r\n       decoration: BoxDecoration(\r\n         borderRadius: BorderRadius.circular(16.0),\r\n         color: Colors.deepPurple.shade100,\r\n@@ -20,6 +28,8 @@\n           ),\r\n         ],\r\n       ),\r\n     );\r\n+      }),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688145685368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,11 @@\n                     color: Colors.black.withOpacity(0.056),\r\n                   ),\r\n                 ],\r\n               ),\r\n+              child: Column(\r\n+                children: [],\r\n+              ),\r\n             );\r\n           }),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1688146113493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,22 @@\n                   ),\r\n                 ],\r\n               ),\r\n               child: Column(\r\n-                children: [],\r\n+                children: [\r\n+                  Container(\r\n+                    width: size.width,\r\n+                    child: Column(\r\n+                      children: [\r\n+                        Row(\r\n+                          children: [\r\n+                            Text('Appointment Request'),\r\n+                          ],\r\n+                        )\r\n+                      ],\r\n+                    ),\r\n+                  ),\r\n+                ],\r\n               ),\r\n             );\r\n           }),\r\n     );\r\n"
+                }
+            ],
+            "date": 1688145212858,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass UpcomingScheduleWidget extends StatelessWidget {\r\n  const UpcomingScheduleWidget({\r\n    super.key,\r\n  });\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}\r\n"
+        }
+    ]
+}

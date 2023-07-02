@@ -1,0 +1,26 @@
+{
+    "sourceFile": "android/app/src/main/kotlin/com/example/healtether/MainActivity.kt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1688187186491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688187217284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n package com.example.healtether\r\n \r\n import io.flutter.embedding.android.FlutterActivity\r\n+import io.flutter.embedding.android.SplashScreen\r\n \r\n class MainActivity: FlutterActivity() {\r\n-}\r\n+\r\n+    override fun provideSplashScreen(): SplashScreen? = SplashView()\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688187633543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n package com.example.healtether\r\n \r\n import io.flutter.embedding.android.FlutterActivity\r\n-import io.flutter.embedding.android.SplashScreen\r\n \r\n class MainActivity: FlutterActivity() {\r\n-\r\n-    override fun provideSplashScreen(): SplashScreen? = SplashView()\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                }
+            ],
+            "date": 1688187186491,
+            "name": "Commit-0",
+            "content": "package com.example.healtether\r\n\r\nimport io.flutter.embedding.android.FlutterActivity\r\n\r\nclass MainActivity: FlutterActivity() {\r\n}\r\n"
+        }
+    ]
+}

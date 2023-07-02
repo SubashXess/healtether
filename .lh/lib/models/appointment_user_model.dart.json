@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/models/appointment_user_model.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1688148772728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688148795816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,13 @@\n   final String gender;\r\n   final String date;\r\n   final String time;\r\n   final String bookingType;\r\n+\r\n+  const AppointmentUserModel(\r\n+      {required this.name,\r\n+      required this.age,\r\n+      required this.gender,\r\n+      required this.date,\r\n+      required this.time,\r\n+      required this.bookingType});\r\n }\r\n"
+                },
+                {
+                    "date": 1688149141291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,16 @@\n       required this.gender,\r\n       required this.date,\r\n       required this.time,\r\n       required this.bookingType});\r\n+\r\n+ \r\n+  static List<AppointmentUserModel> generatedItem = [\r\n+    AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+     AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+      AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+       AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+        AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+         AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+          AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '02 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+  ];\r\n }\r\n"
+                },
+                {
+                    "date": 1688149457779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,56 +13,15 @@\n       required this.date,\r\n       required this.time,\r\n       required this.bookingType});\r\n \r\n+ \r\n   static List<AppointmentUserModel> generatedItem = [\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n-    AppointmentUserModel(\r\n-        name: 'Somnath Mogul',\r\n-        age: '27',\r\n-        gender: 'Male',\r\n-        date: '02 July 2023',\r\n-        time: '10:15 AM',\r\n-        bookingType: 'Virtually'),\r\n+    const AppointmentUserModel(name: 'Somnath Mogul', age: '27', gender: 'Male', date: '03 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+     const AppointmentUserModel(name: 'Sheetal Chopra', age: '26', gender: 'Female', date: '03 July 2023', time: '11:30 AM', bookingType: 'On Clinic'),\r\n+      const AppointmentUserModel(name: 'Pradeep Karan', age: '34', gender: 'Male', date: '03 July 2023', time: '5:15 PM', bookingType: 'Virtually'),\r\n+       const AppointmentUserModel(name: 'Amolika Malhotra', age: '23', gender: 'Female', date: '04 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n+        const AppointmentUserModel(name: 'Dhiraj Ghose', age: '25', gender: 'Male', date: '04 July 2023', time: '10:30 AM', bookingType: 'On Clinic'),\r\n+         const AppointmentUserModel(name: 'Arjun Chopra', age: '26', gender: 'Male', date: '04 July 2023', time: '11:30 AM', bookingType: 'On Clinic'),\r\n+          const AppointmentUserModel(name: 'Arpit Choudhury', age: '40', gender: 'Male', date: '05 July 2023', time: '10:15 AM', bookingType: 'Virtually'),\r\n   ];\r\n }\r\n"
+                }
+            ],
+            "date": 1688148772728,
+            "name": "Commit-0",
+            "content": "class AppointmentUserModel {\r\n  final String name;\r\n  final String age;\r\n  final String gender;\r\n  final String date;\r\n  final String time;\r\n  final String bookingType;\r\n}\r\n"
+        }
+    ]
+}

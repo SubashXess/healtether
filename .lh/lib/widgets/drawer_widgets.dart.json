@@ -1,0 +1,58 @@
+{
+    "sourceFile": "lib/widgets/drawer_widgets.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1688101318423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688101343649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,13 @@\n           color: Colors.white,\r\n           child: SingleChildScrollView(\r\n             child: Column(\r\n               children: [\r\n-                DrawerItem(),\r\n+                DrawerItem(\r\n+                  icon: Icons.home_rounded,\r\n+                  label: 'Home',\r\n+                  onTap: () {},\r\n+                ),\r\n               ],\r\n             ),\r\n           ),\r\n         ),\r\n"
+                },
+                {
+                    "date": 1688101484893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,14 @@\n                   icon: Icons.home_rounded,\r\n                   label: 'Home',\r\n                   onTap: () {},\r\n                 ),\r\n+                Divider(),\r\n+                DrawerItem(\r\n+                  icon: Icons.home_rounded,\r\n+                  label: 'Home',\r\n+                  onTap: () {},\r\n+                ),\r\n               ],\r\n             ),\r\n           ),\r\n         ),\r\n"
+                },
+                {
+                    "date": 1688101548093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                   onTap: () {},\r\n                 ),\r\n                 Divider(),\r\n                 DrawerItem(\r\n-                  icon: Icons.home_rounded,\r\n+                  icon: Icons.access_time_filled_rounded,\r\n                   label: 'Home',\r\n                   onTap: () {},\r\n                 ),\r\n               ],\r\n"
+                },
+                {
+                    "date": 1688101559751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 ),\r\n                 Divider(),\r\n                 DrawerItem(\r\n                   icon: Icons.access_time_filled_rounded,\r\n-                  label: 'Home',\r\n+                  label: 'Schedule',\r\n                   onTap: () {},\r\n                 ),\r\n               ],\r\n             ),\r\n"
+                },
+                {
+                    "date": 1688101565475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,11 @@\n \r\n class DrawerItem extends StatelessWidget {\r\n   const DrawerItem({\r\n     super.key,\r\n+    required this.onTap,\r\n+    required this.icon,\r\n+    required this.label,\r\n   });\r\n \r\n   final VoidCallback onTap;\r\n   final IconData icon;\r\n"
+                },
+                {
+                    "date": 1688101588391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,10 +58,10 @@\n       child: Container(\r\n         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),\r\n         child: Row(\r\n           children: [\r\n-            const Icon(\r\n-              Icons.home_rounded,\r\n+            Icon(\r\n+              icon,\r\n               size: 20.0,\r\n             ),\r\n             const SizedBox(width: 10.0),\r\n             Text(label, style: AppTextStyle.h3TextStyle()),\r\n"
+                },
+                {
+                    "date": 1688101597498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                   icon: Icons.home_rounded,\r\n                   label: 'Home',\r\n                   onTap: () {},\r\n                 ),\r\n-                Divider(),\r\n+                \r\n                 DrawerItem(\r\n                   icon: Icons.access_time_filled_rounded,\r\n                   label: 'Schedule',\r\n                   onTap: () {},\r\n"
+                },
+                {
+                    "date": 1688101633965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,13 @@\n                   icon: Icons.access_time_filled_rounded,\r\n                   label: 'Schedule',\r\n                   onTap: () {},\r\n                 ),\r\n+                DrawerItem(\r\n+                  icon: Icons.chat_rounded,\r\n+                  label: 'Schedule',\r\n+                  onTap: () {},\r\n+                ),\r\n               ],\r\n             ),\r\n           ),\r\n         ),\r\n"
+                },
+                {
+                    "date": 1688101640986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n                   onTap: () {},\r\n                 ),\r\n                 DrawerItem(\r\n                   icon: Icons.chat_rounded,\r\n-                  label: 'Whatsapp',\r\n+                  label: 'WhatsApp',\r\n                   onTap: () {},\r\n                 ),\r\n               ],\r\n             ),\r\n"
+                },
+                {
+                    "date": 1688101728217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,13 @@\n                   icon: Icons.chat_rounded,\r\n                   label: 'WhatsApp',\r\n                   onTap: () {},\r\n                 ),\r\n+                DrawerItem(\r\n+                  icon: Icons.volume_up_rounded,\r\n+                  label: 'Schedule',\r\n+                  onTap: () {},\r\n+                ),\r\n               ],\r\n             ),\r\n           ),\r\n         ),\r\n"
+                }
+            ],
+            "date": 1688101318423,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nimport '../constants/themes.dart';\r\n\r\nclass DrawerWidget extends StatelessWidget {\r\n  const DrawerWidget({\r\n    super.key,\r\n  });\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Drawer(\r\n      backgroundColor: Colors.white,\r\n      elevation: 0.0,\r\n      width: 240.0,\r\n      child: SafeArea(\r\n        child: Container(\r\n          color: Colors.white,\r\n          child: SingleChildScrollView(\r\n            child: Column(\r\n              children: [\r\n                DrawerItem(),\r\n              ],\r\n            ),\r\n          ),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n\r\nclass DrawerItem extends StatelessWidget {\r\n  const DrawerItem({\r\n    super.key,\r\n  });\r\n\r\n  final VoidCallback onTap;\r\n  final IconData icon;\r\n  final String label;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return InkWell(\r\n      onTap: onTap,\r\n      child: Container(\r\n        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),\r\n        child: Row(\r\n          children: [\r\n            const Icon(\r\n              Icons.home_rounded,\r\n              size: 20.0,\r\n            ),\r\n            const SizedBox(width: 10.0),\r\n            Text(label, style: AppTextStyle.h3TextStyle()),\r\n          ],\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

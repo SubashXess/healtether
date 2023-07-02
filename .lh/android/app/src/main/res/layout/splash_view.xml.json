@@ -1,0 +1,18 @@
+{
+    "sourceFile": "android/app/src/main/res/layout/splash_view.xml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1688187041328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1688187041328,
+            "name": "Commit-0",
+            "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <com.airbnb.lottie.LottieAnimationView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:lottie_autoPlay=\"true\"\r\n        app:lottie_rawRes=\"@raw/splash_screen\"\r\n        app:lottie_loop=\"false\"\r\n        app:lottie_speed=\"1.00\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>"
+        }
+    ]
+}

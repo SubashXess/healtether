@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/pages/welcomepage/welcomepage.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1688026147241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688026624693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const WelcomePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n+    return  Scaffold();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688026639388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const WelcomePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Scaffold();\r\n+    return Scaffold(\r\n+      body: SingleChildScrollView(child: Column(children: [],),),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688036673547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:healtether/constants/themes.dart';\r\n \r\n class WelcomePage extends StatelessWidget {\r\n   const WelcomePage({super.key});\r\n \r\n@@ -7,9 +8,12 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: SingleChildScrollView(\r\n         child: Column(\r\n-          children: [],\r\n+          children: [\r\n+            Text('Welcome to your\\nHealthcare Assistant',\r\n+                style: AppTextStyle.h2TextStyle()),\r\n+          ],\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                }
+            ],
+            "date": 1688026147241,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass WelcomePage extends StatelessWidget {\r\n  const WelcomePage({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const Scaffold();\r\n  }\r\n}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/pages/verification_page/components/resend_code.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1688061482609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1688061482609,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\nimport '../../../constants/themes.dart';\r\n\r\nclass ResendCodeCheck extends StatelessWidget {\r\n  const ResendCodeCheck(\r\n      {super.key,\r\n      required this.resend,\r\n      required this.onTap,\r\n      required this.timer});\r\n\r\n  final bool resend;\r\n  final Function() onTap;\r\n  final String timer;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Row(\r\n      mainAxisAlignment: MainAxisAlignment.center,\r\n      mainAxisSize: MainAxisSize.min,\r\n      children: [\r\n        Text(\r\n          resend ? 'Resend code in ' : 'Didn\\'t get the code? ',\r\n          style: AppTextStyle.h4TextStyle(color: Colors.grey.shade500),\r\n        ),\r\n        GestureDetector(\r\n          onTap: onTap,\r\n          child: Text(\r\n            resend ? '${timer}s' : 'Resend',\r\n            style: AppTextStyle.h4TextStyle(\r\n              color: AppTheme.appThemeColor,\r\n              fontWeight: FontWeight.w600,\r\n            ),\r\n          ),\r\n        )\r\n      ],\r\n    );\r\n  }\r\n}"
+        }
+    ]
+}

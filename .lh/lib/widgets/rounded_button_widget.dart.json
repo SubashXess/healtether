@@ -1,0 +1,42 @@
+{
+    "sourceFile": "lib/widgets/rounded_button_widget.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1688043370453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688046893380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,36 +9,44 @@\n     this.backgroundColor = AppTheme.appThemeColor,\r\n     this.labelColor = Colors.white,\r\n     required this.label,\r\n     this.bordered = false,\r\n+    required this.onTap,\r\n   });\r\n \r\n   final Size size;\r\n   final Color backgroundColor;\r\n   final Color labelColor;\r\n   final String label;\r\n   final bool bordered;\r\n+  final VoidCallback onTap;\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container(\r\n-      width: size.width,\r\n-      height: 45.0,\r\n-      decoration: BoxDecoration(\r\n-        borderRadius: BorderRadius.circular(16.0),\r\n-        color: bordered ? null : backgroundColor,\r\n-        border:\r\n-            bordered ? Border.all(color: backgroundColor, width: 1.0) : null,\r\n-        boxShadow: bordered\r\n-            ? null\r\n-            : [\r\n-                AppBoxShadow.s0BoxShadow(color: Colors.black.withOpacity(0.056))\r\n-              ],\r\n+    return InkWell(\r\n+      splashColor: Colors.transparent,\r\n+      highlightColor: Colors.transparent,\r\n+      onTap: onTap,\r\n+      child: Container(\r\n+        width: size.width,\r\n+        height: 45.0,\r\n+        decoration: BoxDecoration(\r\n+          borderRadius: BorderRadius.circular(16.0),\r\n+          color: bordered ? null : backgroundColor,\r\n+          border:\r\n+              bordered ? Border.all(color: backgroundColor, width: 1.0) : null,\r\n+          boxShadow: bordered\r\n+              ? null\r\n+              : [\r\n+                  AppBoxShadow.s0BoxShadow(\r\n+                      color: Colors.black.withOpacity(0.056))\r\n+                ],\r\n+        ),\r\n+        child: Center(\r\n+          child: Text(label,\r\n+              style: AppTextStyle.h4TextStyle(\r\n+                  color: labelColor, fontWeight: FontWeight.w500)),\r\n+        ),\r\n       ),\r\n-      child: Center(\r\n-        child: Text(label,\r\n-            style: AppTextStyle.h4TextStyle(\r\n-                color: labelColor, fontWeight: FontWeight.w500)),\r\n-      ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688100034414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,4 +49,58 @@\n       ),\r\n     );\r\n   }\r\n }\r\n+\r\n+\r\n+class IconButtonWidget extends StatelessWidget {\r\n+  const IconButtonWidget({\r\n+    super.key,\r\n+    required this.onTap,\r\n+    this.size = 36.0,\r\n+    required this.icon,\r\n+    this.badgeShow = false,\r\n+    this.badgeLabel,\r\n+  });\r\n+\r\n+  final VoidCallback onTap;\r\n+  final double size;\r\n+  final IconData icon;\r\n+  final bool badgeShow;\r\n+  final String? badgeLabel;\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return InkWell(\r\n+      splashColor: Colors.transparent,\r\n+      highlightColor: Colors.transparent,\r\n+      onTap: onTap,\r\n+      child: badge.Badge(\r\n+        showBadge: badgeShow,\r\n+        position: badge.BadgePosition.topEnd(end: 0, top: -6.0),\r\n+        badgeStyle: const badge.BadgeStyle(\r\n+          badgeColor: Colors.red,\r\n+          padding: EdgeInsets.all(5.0),\r\n+          elevation: 0.0,\r\n+        ),\r\n+        badgeContent: Text(\r\n+          '2',\r\n+          style: AppTextStyle.h4TextStyle(\r\n+              color: Colors.white, size: 10.0, fontWeight: FontWeight.w500),\r\n+        ),\r\n+        child: Container(\r\n+          width: size,\r\n+          height: size,\r\n+          decoration: BoxDecoration(\r\n+            borderRadius: BorderRadius.circular(14.0),\r\n+            border: Border.all(width: 1.0, color: Colors.black26),\r\n+          ),\r\n+          child: Icon(\r\n+            icon,\r\n+            size: 22.0,\r\n+            color: Colors.black87,\r\n+          ),\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1688100049577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import 'package:flutter/material.dart';\r\n-\r\n+import 'package:badges/badges.dart' as badge;\r\n import '../constants/themes.dart';\r\n \r\n class RoundedButton extends StatelessWidget {\r\n   const RoundedButton({\r\n"
+                },
+                {
+                    "date": 1688141589292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,16 +57,18 @@\n     required this.onTap,\r\n     this.size = 36.0,\r\n     required this.icon,\r\n     this.badgeShow = false,\r\n-    this.badgeLabel,\r\n+    this.badgeLabel, required this.borderColor, required this.iconColor,\r\n   });\r\n \r\n   final VoidCallback onTap;\r\n   final double size;\r\n   final IconData icon;\r\n   final bool badgeShow;\r\n   final String? badgeLabel;\r\n+  final Color borderColor;\r\n+  final Color iconColor;\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return InkWell(\r\n"
+                },
+                {
+                    "date": 1688141616673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,10 +58,10 @@\n     this.size = 36.0,\r\n     required this.icon,\r\n     this.badgeShow = false,\r\n     this.badgeLabel,\r\n-    required this.borderColor,\r\n-    required this.iconColor,\r\n+     this.borderColor = Colors.black26,\r\n+     this.iconColor = Colors.black87,\r\n   });\r\n \r\n   final VoidCallback onTap;\r\n   final double size;\r\n"
+                },
+                {
+                    "date": 1688141630763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,14 +94,14 @@\n           width: size,\r\n           height: size,\r\n           decoration: BoxDecoration(\r\n             borderRadius: BorderRadius.circular(14.0),\r\n-            border: Border.all(width: 1.0, color: Colors.black26),\r\n+            border: Border.all(width: 1.0, color: borderColor),\r\n           ),\r\n           child: Icon(\r\n             icon,\r\n             size: 22.0,\r\n-            color: Colors.black87,\r\n+            color: iconColor,\r\n           ),\r\n         ),\r\n       ),\r\n     );\r\n"
+                }
+            ],
+            "date": 1688043370453,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nimport '../constants/themes.dart';\r\n\r\nclass RoundedButton extends StatelessWidget {\r\n  const RoundedButton({\r\n    super.key,\r\n    required this.size,\r\n    this.backgroundColor = AppTheme.appThemeColor,\r\n    this.labelColor = Colors.white,\r\n    required this.label,\r\n    this.bordered = false,\r\n  });\r\n\r\n  final Size size;\r\n  final Color backgroundColor;\r\n  final Color labelColor;\r\n  final String label;\r\n  final bool bordered;\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container(\r\n      width: size.width,\r\n      height: 45.0,\r\n      decoration: BoxDecoration(\r\n        borderRadius: BorderRadius.circular(16.0),\r\n        color: bordered ? null : backgroundColor,\r\n        border:\r\n            bordered ? Border.all(color: backgroundColor, width: 1.0) : null,\r\n        boxShadow: bordered\r\n            ? null\r\n            : [\r\n                AppBoxShadow.s0BoxShadow(color: Colors.black.withOpacity(0.056))\r\n              ],\r\n      ),\r\n      child: Center(\r\n        child: Text(label,\r\n            style: AppTextStyle.h4TextStyle(\r\n                color: labelColor, fontWeight: FontWeight.w500)),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

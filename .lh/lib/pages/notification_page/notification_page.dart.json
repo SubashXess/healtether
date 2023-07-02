@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/pages/notification_page/notification_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1688151291800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688151332945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,15 @@\n   const NotificationPage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Scaffold();\r\n+    return Scaffold(\r\n+      appBar: AppBar(\r\n+        title: Container(\r\n+          child: Stack(\r\n+            children: [],\r\n+          ),\r\n+        ),\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688151370441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,21 @@\n import 'package:flutter/material.dart';\r\n+import 'package:healtether/constants/themes.dart';\r\n \r\n class NotificationPage extends StatelessWidget {\r\n   const NotificationPage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    Size size = MediaQuery.of(context).size;\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n         title: Container(\r\n+          width: size.width,\r\n           child: Stack(\r\n-            children: [],\r\n+            children: [\r\n+              Text('Notifications', style: AppTextStyle.h2TextStyle()),\r\n+            ],\r\n           ),\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1688151427363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\r\n import 'package:healtether/constants/themes.dart';\r\n+import 'package:healtether/widgets/rounded_button_widget.dart';\r\n \r\n class NotificationPage extends StatelessWidget {\r\n   const NotificationPage({super.key});\r\n \r\n@@ -13,8 +14,9 @@\n           width: size.width,\r\n           child: Stack(\r\n             children: [\r\n               Text('Notifications', style: AppTextStyle.h2TextStyle()),\r\n+              IconButtonWidget(onTap: () {}, icon: Icons.arrow_back_rounded),\r\n             ],\r\n           ),\r\n         ),\r\n       ),\r\n"
+                },
+                {
+                    "date": 1688151468563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   Widget build(BuildContext context) {\r\n     Size size = MediaQuery.of(context).size;\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n+        automaticallyImplyLeading: false,\r\n         title: Container(\r\n           width: size.width,\r\n           child: Stack(\r\n             children: [\r\n"
+                },
+                {
+                    "date": 1688151475691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n         automaticallyImplyLeading: false,\r\n         title: Container(\r\n           width: size.width,\r\n           child: Stack(\r\n+            alignment: Alignment.center,\r\n             children: [\r\n               Text('Notifications', style: AppTextStyle.h2TextStyle()),\r\n               IconButtonWidget(onTap: () {}, icon: Icons.arrow_back_rounded),\r\n             ],\r\n"
+                },
+                {
+                    "date": 1688151488681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,14 @@\n         title: Container(\r\n           width: size.width,\r\n           child: Stack(\r\n             alignment: Alignment.center,\r\n+\r\n             children: [\r\n               Text('Notifications', style: AppTextStyle.h2TextStyle()),\r\n-              IconButtonWidget(onTap: () {}, icon: Icons.arrow_back_rounded),\r\n+              Positioned(\r\n+                left: 0.0,\r\n+                child: IconButtonWidget(onTap: () {}, icon: Icons.arrow_back_rounded)),\r\n             ],\r\n           ),\r\n         ),\r\n       ),\r\n"
+                },
+                {
+                    "date": 1688151506525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n       appBar: AppBar(\r\n         automaticallyImplyLeading: false,\r\n         title: Container(\r\n           width: size.width,\r\n+          height: 36.0,\r\n           child: Stack(\r\n             alignment: Alignment.center,\r\n             children: [\r\n               Text('Notifications', style: AppTextStyle.h2TextStyle()),\r\n"
+                },
+                {
+                    "date": 1688151550055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n     Size size = MediaQuery.of(context).size;\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n         automaticallyImplyLeading: false,\r\n+        backgroundColor: Colors.white,\r\n         title: Container(\r\n           width: size.width,\r\n           height: 36.0,\r\n           child: Stack(\r\n"
+                }
+            ],
+            "date": 1688151291800,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass NotificationPage extends StatelessWidget {\r\n  const NotificationPage({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold();\r\n  }\r\n}\r\n"
+        }
+    ]
+}

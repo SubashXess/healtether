@@ -1,0 +1,46 @@
+{
+    "sourceFile": "lib/pages/verification_page/verification_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1688060476171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688060483187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n class _VerificationPageState extends State<VerificationPage> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-      body:WillPopScope(onWillPop: () async {} ,),\r\n+      body: WillPopScope(\r\n+        onWillPop: () async {},\r\n+      ),\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1688060492460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: WillPopScope(\r\n-        onWillPop: () async {},\r\n+        onWillPop: () async => false,\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1688060509479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,13 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: WillPopScope(\r\n         onWillPop: () async => false,\r\n+        child: SafeArea(\r\n+          child: SingleChildScrollView(\r\n+            child: Column(),\r\n+          ),\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688060566830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,29 @@\n   State<VerificationPage> createState() => _VerificationPageState();\r\n }\r\n \r\n class _VerificationPageState extends State<VerificationPage> {\r\n+\r\n+\r\n+ final _formKey = GlobalKey<FormState>();\r\n+  late TextEditingController _otpController;\r\n+  late FocusNode _otpNode;\r\n+\r\n   @override\r\n+  void initState() {\r\n+    super.initState();\r\n+    _otpController = TextEditingController();\r\n+    _otpNode = FocusNode();\r\n+  }\r\n+\r\n+  @override\r\n+  void dispose() {\r\n+    _otpController.dispose();\r\n+    _otpNode.dispose();\r\n+    super.dispose();\r\n+  }\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: WillPopScope(\r\n         onWillPop: () async => false,\r\n"
+                },
+                {
+                    "date": 1688060583068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,23 @@\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+     Size size = MediaQuery.of(context).size;\r\n+\r\n+    const focusedBorderColor = AppTheme.appPrimaryThemeColor;\r\n+    const fillColor = AppTheme.appDefaultTheme;\r\n+    const borderColor = AppTheme.appPrimaryThemeColor;\r\n+\r\n+    final defaultPinTheme = PinTheme(\r\n+      width: 56,\r\n+      height: 50,\r\n+      textStyle: AppTextStyle.h2TextStyle(),\r\n+      decoration: BoxDecoration(\r\n+        borderRadius: BorderRadius.circular(16.0),\r\n+        border: Border.all(color: borderColor),\r\n+      ),\r\n+    );\r\n     return Scaffold(\r\n       body: WillPopScope(\r\n         onWillPop: () async => false,\r\n         child: SafeArea(\r\n"
+                },
+                {
+                    "date": 1688060620067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import 'package:flutter/material.dart';\r\n+import 'package:pinput/pinput.dart';\r\n \r\n+import '../../constants/themes.dart';\r\n+\r\n class VerificationPage extends StatefulWidget {\r\n   const VerificationPage({super.key});\r\n \r\n   @override\r\n@@ -29,11 +32,11 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     Size size = MediaQuery.of(context).size;\r\n \r\n-    const focusedBorderColor = AppTheme.appPrimaryThemeColor;\r\n-    const fillColor = AppTheme.appDefaultTheme;\r\n-    const borderColor = AppTheme.appPrimaryThemeColor;\r\n+    const focusedBorderColor = AppTheme.appThemeColor;\r\n+    const fillColor = AppDefaultTheme.appDefaultTheme;\r\n+    const borderColor = AppTheme.appThemeColor;\r\n \r\n     final defaultPinTheme = PinTheme(\r\n       width: 56,\r\n       height: 50,\r\n"
+                },
+                {
+                    "date": 1688060675197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,15 +45,13 @@\n         borderRadius: BorderRadius.circular(16.0),\r\n         border: Border.all(color: borderColor),\r\n       ),\r\n     );\r\n-    return Scaffold(\r\n-      body: WillPopScope(\r\n-        onWillPop: () async => false,\r\n-        child: SafeArea(\r\n-          child: SingleChildScrollView(\r\n-            child: Column(),\r\n-          ),\r\n+    return WillPopScope(\r\n+      onWillPop: () async => false,\r\n+      child: SafeArea(\r\n+        child: SingleChildScrollView(\r\n+          child: Column(),\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                }
+            ],
+            "date": 1688060476171,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass VerificationPage extends StatefulWidget {\r\n  const VerificationPage({super.key});\r\n\r\n  @override\r\n  State<VerificationPage> createState() => _VerificationPageState();\r\n}\r\n\r\nclass _VerificationPageState extends State<VerificationPage> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body:WillPopScope(onWillPop: () async {} ,),\r\n    );\r\n  }\r\n}"
+        }
+    ]
+}

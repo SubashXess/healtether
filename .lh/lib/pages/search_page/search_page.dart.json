@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/pages/search_page/search_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1688153080508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688153103647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const SearchPage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n+    return const Scaffold(\r\n+      body: Center(child: Text('Search'),),\r\n+    );\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1688153080507,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass SearchPage extends StatelessWidget {\r\n  const SearchPage({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const Scaffold();\r\n  }\r\n}\r\n"
+        }
+    ]
+}

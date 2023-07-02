@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/pages/profilepage/profilepage.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1688142918468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688142929320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,11 @@\n   const ProfilePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Scaffold();\r\n+    return Scaffold(\r\n+      body: Center(\r\n\\ No newline at end of file\n+        child: Text('Profile Page'),\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1688155784657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,31 @@\n import 'package:flutter/material.dart';\r\n \r\n-class ProfilePage extends StatelessWidget {\r\n+class ProfilePage extends StatefulWidget {\r\n   const ProfilePage({super.key});\r\n \r\n   @override\r\n+  State<ProfilePage> createState() => _ProfilePageState();\r\n+}\r\n+\r\n+class _ProfilePageState extends State<ProfilePage> {\r\n+\r\n+  @override\r\n+  void initState() {\r\n+  \r\n+    super.initState();\r\n+  }\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold(\r\n+    \r\n+    return  Scaffold(\r\n       body: Center(\r\n-        child: Text('Profile Page'),\r\n+        child: Column(\r\n+          children: [\r\n+            Text('Profile Page'),\r\n+          ],\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688155880424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+import '../../database/shared_preference.dart';\r\n+\r\n+class ProfilePage extends StatefulWidget {\r\n+  const ProfilePage({super.key});\r\n+\r\n+  @override\r\n+  State<ProfilePage> createState() => _ProfilePageState();\r\n+}\r\n+\r\n+class _ProfilePageState extends State<ProfilePage> {\r\n+  @override\r\n+  void initState() {\r\n+    super.initState();\r\n+    getData();\r\n+  }\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      body: Center(\r\n+        child: Column(\r\n+          children: [\r\n+            Text('Profile Page'),\r\n+          ],\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+\r\n+  void getData() async {\r\n+    String? phoneNumber = await UserPreferences().getStringValue('phone');\r\n+    setState(() {});\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1688142918468,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass ProfilePage extends StatelessWidget {\r\n  const ProfilePage({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold();\r\n  }\r\n}"
+        }
+    ]
+}

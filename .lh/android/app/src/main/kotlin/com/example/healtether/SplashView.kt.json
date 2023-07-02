@@ -1,0 +1,18 @@
+{
+    "sourceFile": "android/app/src/main/kotlin/com/example/healtether/SplashView.kt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1688187150797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1688187150797,
+            "name": "Commit-0",
+            "content": "package com.example.healtether\r\n\r\nimport android.content.Context\r\nimport android.os.Bundle\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport io.flutter.embedding.android.SplashScreen\r\n\r\nclass SplashView : SplashScreen {\r\n    override fun createSplashView(context: Context, savedInstanceState: Bundle?): View? =\r\n            LayoutInflater.from(context).inflate(R.layout.splash_view, null, false)\r\n\r\n    override fun transitionToFlutter(onTransitionComplete: Runnable) {\r\n        onTransitionComplete.run()\r\n    }\r\n}"
+        }
+    ]
+}

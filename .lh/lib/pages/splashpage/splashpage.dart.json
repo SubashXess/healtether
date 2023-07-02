@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/pages/splashpage/splashpage.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1688041113799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688041139276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n+import '../../constants/themes.dart';\r\n+\r\n class SplashPage extends StatefulWidget {\r\n   const SplashPage({super.key});\r\n \r\n   @override\r\n@@ -11,9 +13,22 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: Column(\r\n-        children: [],\r\n+        children: [\r\n+          Container(\r\n+            width: 86.0,\r\n+            height: 86.0,\r\n+            decoration: BoxDecoration(\r\n+              borderRadius: BorderRadius.circular(16.0),\r\n+              color: Colors.grey.shade300,\r\n+            ),\r\n+            child: Center(\r\n+              child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n+            ),\r\n+          ),\r\n+          const SizedBox(height: 10.0),\r\n+        ],\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688041165096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n               child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n             ),\r\n           ),\r\n           const SizedBox(height: 10.0),\r\n+          Text('Logo', style: AppTextStyle.h1TextStyle()),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1688041174935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n               child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n             ),\r\n           ),\r\n           const SizedBox(height: 10.0),\r\n-          Text('Logo', style: AppTextStyle.h1TextStyle()),\r\n+          Text('HealTether', style: AppTextStyle.h1TextStyle()),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1688041220317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,24 +12,27 @@\n class _SplashPageState extends State<SplashPage> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-      body: Column(\r\n-        children: [\r\n-          Container(\r\n-            width: 86.0,\r\n-            height: 86.0,\r\n-            decoration: BoxDecoration(\r\n-              borderRadius: BorderRadius.circular(16.0),\r\n-              color: Colors.grey.shade300,\r\n+      body: Hero(\r\n+        tag: 'splash-page-load',\r\n+        child: Column(\r\n+          children: [\r\n+            Container(\r\n+              width: 86.0,\r\n+              height: 86.0,\r\n+              decoration: BoxDecoration(\r\n+                borderRadius: BorderRadius.circular(16.0),\r\n+                color: Colors.grey.shade300,\r\n+              ),\r\n+              child: Center(\r\n+                child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n+              ),\r\n             ),\r\n-            child: Center(\r\n-              child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n-            ),\r\n-          ),\r\n-          const SizedBox(height: 10.0),\r\n-          Text('HealTether', style: AppTextStyle.h1TextStyle()),\r\n-        ],\r\n+            const SizedBox(height: 10.0),\r\n+            Text('HealTether', style: AppTextStyle.h1TextStyle()),\r\n+          ],\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688041281497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,46 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+import '../../constants/themes.dart';\r\n+\r\n+class SplashPage extends StatefulWidget {\r\n+  const SplashPage({super.key});\r\n+\r\n+  @override\r\n+  State<SplashPage> createState() => _SplashPageState();\r\n+}\r\n+\r\n+class _SplashPageState extends State<SplashPage> {\r\n+\r\n+  @override\r\n+  void initState() {\r\n+    \r\n+    super.initState();\r\n+  }\r\n+\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      body: Hero(\r\n+        tag: 'splash-page-load',\r\n+        child: Column(\r\n+          children: [\r\n+            Container(\r\n+              width: 86.0,\r\n+              height: 86.0,\r\n+              decoration: BoxDecoration(\r\n+                borderRadius: BorderRadius.circular(16.0),\r\n+                color: Colors.grey.shade300,\r\n+              ),\r\n+              child: Center(\r\n+                child: Text('Logo', style: AppTextStyle.h3TextStyle()),\r\n+              ),\r\n+            ),\r\n+            const SizedBox(height: 10.0),\r\n+            Text('HealTether', style: AppTextStyle.h1TextStyle()),\r\n+          ],\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1688041371233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,5 +42,7 @@\n         ),\r\n       ),\r\n     );\r\n   }\r\n+\r\n+  Future<void> checkUserLoggedIn() async {}\r\n }\r\n"
+                },
+                {
+                    "date": 1688041437284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n+import 'dart:async';\r\n+\r\n import 'package:flutter/material.dart';\r\n+import 'package:healtether/pages/welcomepage/welcomepage.dart';\r\n+import 'package:healtether/utilities/navigators.dart';\r\n \r\n import '../../constants/themes.dart';\r\n \r\n class SplashPage extends StatefulWidget {\r\n@@ -12,8 +16,9 @@\n class _SplashPageState extends State<SplashPage> {\r\n   @override\r\n   void initState() {\r\n     super.initState();\r\n+    checkUserLoggedIn();\r\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n@@ -40,6 +45,10 @@\n       ),\r\n     );\r\n   }\r\n \r\n-  Future<void> checkUserLoggedIn() async {}\r\n+  Future<void> checkUserLoggedIn() async {\r\n+    Timer.periodic(const Duration(milliseconds: 3000), (timer) {\r\n+      navigatorPushRemove(context, const WelcomePage());\r\n+    });\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1688041481596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n   }\r\n \r\n   Future<void> checkUserLoggedIn() async {\r\n     Timer.periodic(const Duration(milliseconds: 3000), (timer) {\r\n-      navigatorPushRemove(context, const WelcomePage());\r\n+      navigatorPushReplacement(context, const WelcomePage());\r\n     });\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1688041113799,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass SplashPage extends StatefulWidget {\r\n  const SplashPage({super.key});\r\n\r\n  @override\r\n  State<SplashPage> createState() => _SplashPageState();\r\n}\r\n\r\nclass _SplashPageState extends State<SplashPage> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Scaffold(\r\n      body: Column(\r\n        children: [],\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

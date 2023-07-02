@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/models/bottom_navbar_model.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1688143194373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688143316404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,10 @@\n \r\n   const BottomNavBarModel({required this.label, required this.icon});\r\n \r\n   static List<BottomNavBarModel> generatedItem = [\r\n-    BottomNavBarModel(label: 'Home', icon: Icons.home_rounded),\r\n+    const BottomNavBarModel(label: 'Home', icon: Icons.home_rounded),\r\n+    const BottomNavBarModel(label: 'Schedule', icon: Icons.calendar_month),\r\n+    const BottomNavBarModel(label: 'Chat', icon: Icons.chat_rounded),\r\n+    const BottomNavBarModel(label: 'Profile', icon: Icons.person_rounded),\r\n   ];\r\n }\r\n"
+                }
+            ],
+            "date": 1688143194373,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass BottomNavBarModel {\r\n  final String label;\r\n  final IconData icon;\r\n\r\n  const BottomNavBarModel({required this.label, required this.icon});\r\n\r\n  static List<BottomNavBarModel> generatedItem = [\r\n    BottomNavBarModel(label: 'Home', icon: Icons.home_rounded),\r\n  ];\r\n}\r\n"
+        }
+    ]
+}

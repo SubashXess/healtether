@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/models/country_model.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1688154108212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688154115298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,31 @@\n+class CountryCodeModel {\r\n+  final String flag;\r\n+  final String countryName;\r\n+  final String code;\r\n+\r\n+  const CountryCodeModel(\r\n+      {required this.flag, required this.countryName, required this.code});\r\n+\r\n+  static List<CountryCodeModel> generatedItem = [\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/bangladesh.png',\r\n+        countryName: 'Bangladesh',\r\n+        code: '+880'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/france.png', countryName: 'France', code: '+33'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/germany.png', countryName: 'Germany', code: '+49'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/india.png', countryName: 'India', code: '+91'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/turkey.png', countryName: 'Turkey', code: '+90'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/united-kingdom.png',\r\n+        countryName: 'United Kingdom',\r\n+        code: '+44'),\r\n+    const CountryCodeModel(\r\n+        flag: 'assets/flags/united-states.png',\r\n+        countryName: 'United States',\r\n+        code: '+1'),\r\n+  ];\r\n+}\r\n"
+                }
+            ],
+            "date": 1688154108212,
+            "name": "Commit-0",
+            "content": "class CountryCodeModel {\r\n  final String flag;\r\n  final String countryName;\r\n  final String code;\r\n\r\n  const CountryCodeModel(\r\n      {required this.flag, required this.countryName, required this.code});\r\n\r\n  static List<CountryCodeModel> generatedItem = [\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/bangladesh.png',\r\n        countryName: 'Bangladesh',\r\n        code: '+880'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/france.png', countryName: 'France', code: '+33'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/germany.png', countryName: 'Germany', code: '+49'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/india.png', countryName: 'India', code: '+91'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/turkey.png', countryName: 'Turkey', code: '+90'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/united-kingdom.png',\r\n        countryName: 'United Kingdom',\r\n        code: '+44'),\r\n    CountryCodeModel(\r\n        flag: 'assets/flags/united-states.png',\r\n        countryName: 'United States',\r\n        code: '+1'),\r\n  ];\r\n}\r\n"
+        }
+    ]
+}

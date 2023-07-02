@@ -1,0 +1,42 @@
+{
+    "sourceFile": "lib/models/home_service_model.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1688104356484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688104393562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,6 @@\n class HomeServiceModel {\r\n-  final String country;\r\n-  final String code;\r\n+  final String imgPath;\r\n+  final String label;\r\n \r\n-  const HomeServiceModel({required this.country, required this.code});\r\n-\r\n-  factory HomeServiceModel.fromJson(Map<String, dynamic> json) {\r\n-    return HomeServiceModel(\r\n-        country: json['country'], code: json['calling_code']);\r\n-  }\r\n+  const HomeServiceModel({required this.imgPath, required this.label});\r\n }\r\n"
+                },
+                {
+                    "date": 1688104444134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,9 @@\n   final String imgPath;\r\n   final String label;\r\n \r\n   const HomeServiceModel({required this.imgPath, required this.label});\r\n+\r\n+  static List<HomeServiceModel> generatedItem = [\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: label)\r\n+  ];\r\n }\r\n"
+                },
+                {
+                    "date": 1688104486429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n \r\n   const HomeServiceModel({required this.imgPath, required this.label});\r\n \r\n   static List<HomeServiceModel> generatedItem = [\r\n-    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: label)\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'label')\r\n   ];\r\n }\r\n"
+                },
+                {
+                    "date": 1688104578546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,12 @@\n \r\n   const HomeServiceModel({required this.imgPath, required this.label});\r\n \r\n   static List<HomeServiceModel> generatedItem = [\r\n-    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'label')\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Patients'),\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Appointments'),\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Staff'),\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Marketing'),\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Whatsapp'),\r\n+    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Timings'),\r\n   ];\r\n }\r\n"
+                },
+                {
+                    "date": 1688110090815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n   const HomeServiceModel({required this.imgPath, required this.label});\r\n \r\n   static List<HomeServiceModel> generatedItem = [\r\n     HomeServiceModel(\r\n-        imgPath: 'assets/images/patient-img.jpg', label: 'Patients'),\r\n+        imgPath: 'assets/images/patient.jpg', label: 'Patients'),\r\n     HomeServiceModel(\r\n-        imgPath: 'assets/images/patient-img.jpg', label: 'Appointments'),\r\n-    HomeServiceModel(imgPath: 'assets/images/patient-img.jpg', label: 'Staff'),\r\n+        imgPath: 'assets/images/appointment.jpg', label: 'Appointments'),\r\n+    HomeServiceModel(imgPath: 'assets/images/staff.jpg', label: 'Staff'),\r\n     HomeServiceModel(\r\n-        imgPath: 'assets/images/patient-img.jpg', label: 'Marketing'),\r\n+        imgPath: 'assets/images/marketing.jpg', label: 'Marketing'),\r\n     HomeServiceModel(\r\n-        imgPath: 'assets/images/patient-img.jpg', label: 'Whatsapp'),\r\n+        imgPath: 'assets/images/whatsapp.jpg', label: 'Whatsapp'),\r\n     HomeServiceModel(\r\n-        imgPath: 'assets/images/patient-img.jpg', label: 'Timings'),\r\n+        imgPath: 'assets/images/timing.jpg', label: 'Timings'),\r\n   ];\r\n }\r\n"
+                },
+                {
+                    "date": 1688112023122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     const HomeServiceModel(imgPath: 'assets/images/staff.jpg', label: 'Staff'),\r\n     const HomeServiceModel(\r\n         imgPath: 'assets/images/marketing.jpg', label: 'Marketing'),\r\n     const HomeServiceModel(\r\n-        imgPath: 'assets/images/whatsapp.jpg', label: 'Whatsapp'),\r\n+        imgPath: 'assets/images/whatsapp.png', label: 'Whatsapp'),\r\n     const HomeServiceModel(\r\n         imgPath: 'assets/images/timing.jpg', label: 'Timings'),\r\n   ];\r\n }\r\n"
+                }
+            ],
+            "date": 1688104356484,
+            "name": "Commit-0",
+            "content": "class HomeServiceModel {\r\n  final String country;\r\n  final String code;\r\n\r\n  const HomeServiceModel({required this.country, required this.code});\r\n\r\n  factory HomeServiceModel.fromJson(Map<String, dynamic> json) {\r\n    return HomeServiceModel(\r\n        country: json['country'], code: json['calling_code']);\r\n  }\r\n}\r\n"
+        }
+    ]
+}

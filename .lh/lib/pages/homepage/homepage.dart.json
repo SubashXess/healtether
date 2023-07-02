@@ -1,0 +1,50 @@
+{
+    "sourceFile": "lib/pages/homepage/homepage.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1688098440388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688098448866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const HomePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Placeholder();\r\n+    return Scaffold();\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1688098636032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold();\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1688098663026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,11 @@\n   const HomePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Scaffold();\r\n+    return Scaffold(\r\n+      body: SafeArea(\r\n+        child: SingleChildScrollView(),\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688098672996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: SafeArea(\r\n-        child: SingleChildScrollView(),\r\n+        child: SingleChildScrollView(\r\n+          child: Container(),\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1688098689378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   const HomePage({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    Size size = MediaQuery.of(context).size;\r\n     return Scaffold(\r\n       body: SafeArea(\r\n         child: SingleChildScrollView(\r\n           child: Container(),\r\n"
+                },
+                {
+                    "date": 1688098709583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,12 @@\n     Size size = MediaQuery.of(context).size;\r\n     return Scaffold(\r\n       body: SafeArea(\r\n         child: SingleChildScrollView(\r\n-          child: Container(),\r\n+          child: Container(\r\n+            width: double.infinity,\r\n+            child: Column(children: [],),\r\n+          ),\r\n         ),\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1688098754877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,18 @@\n     return Scaffold(\r\n       body: SafeArea(\r\n         child: SingleChildScrollView(\r\n           child: Column(\r\n-            children: [],\r\n+            children: [\r\n+              Container(\r\n+                width: double.infinity,\r\n+                child: Row(\r\n+                  children: [\r\n+                    Icon(Icons.menu_rounded, size: 20.0,),\r\n+                  ],\r\n+                ),\r\n+              ),\r\n+            ],\r\n           ),\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1688098761673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                 child: Row(\r\n                   children: [\r\n                     Icon(\r\n                       Icons.menu_rounded,\r\n-                      size: 20.0,\r\n+                      size: 24.0,\r\n                     ),\r\n                   ],\r\n                 ),\r\n               ),\r\n"
+                }
+            ],
+            "date": 1688098440388,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\n\r\nclass HomePage extends StatelessWidget {\r\n  const HomePage({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const Placeholder();\r\n  }\r\n}"
+        }
+    ]
+}
